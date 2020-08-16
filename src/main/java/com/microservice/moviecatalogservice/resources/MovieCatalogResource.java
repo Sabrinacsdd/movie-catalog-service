@@ -33,7 +33,7 @@ public class MovieCatalogResource {
 
 //        restTemplate.getForObject("http://localhost:8081/movies/foo", Movie.class);
         // get all rated movie IDs
-        UserRating ratings = restTemplate.getForObject("http://localhost:8081/ratingsdata/users/foo" + userId, UserRating.class);
+        UserRating ratings = restTemplate.getForObject("http://localhost:8083/ratingsdata/users/foo" + userId, UserRating.class);
 
         return ratings.getUserRating().stream().map(rating -> {
             // For each movie ID, call movie info service and get details
